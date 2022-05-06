@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(58, 66, 83);
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    padding-bottom: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 350px;
+    border-radius: 40px;
+    margin: 40px;
+    box-shadow: 0 0 100px 40px rgb(47, 46, 66),0 0 200px 0px rgb(73, 215, 255),inset 0 0 20px 10px rgb(38, 38, 38) ;
+}
+
+.btn{
+    width: 70%;
+    height: 60px;
+    border-radius: 50px;
+    border: none;
+    margin: 15%;
+    background-color: rgb(61, 103, 141);
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 50px 0 rgb(0, 0, 0), 0 0 100px 0 rgb(25, 190, 190), 0 0 150px 0 rgb(25, 190, 190);
+    color: rgb(128, 253, 253);
+    font-weight: 600;
+    transition: box-shadow .2s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.btn:hover{
+    color: rgb(0, 204, 255);
+    box-shadow: inset 0 0 50px 0 rgb(0, 0, 0), 0 0 100px 0 rgb(0, 187, 255), 0 0 150px 0 rgb(0, 204, 255);
+    transition: all .2s;
+}
+.btn4{
+    display: none;
+}
+.aclock{
+    margin:20px auto;
+    background-size:350px ;
+    background-repeat: no-repeat;
+    background-image: url("img/clock.png");
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 0px 30px 0px rgb(0, 0, 0), 0px 0px 50px 5px rgb(35, 38, 41);
+    display: none;
+}
+.aclock::before{
+    content: "";
+    border: 7px solid rgba(255, 255, 255, 0.487);
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 2px rgb(255, 255, 255);
+}
+.key{
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.key2{
+    width: 160px;
+    height: 160px;
+}
+.key3{
+    width: 100px;
+    height: 100px;
+}
+.key i{
+    height: 110px;
+    width: 5px;
+    box-shadow: 0 0 15px 0px rgb(0, 179, 255);
+    background-color: rgb(0, 200, 255);
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+.key2 i{
+    height: 80px;
+    width: 5px;
+    background-color: rgb(242, 255, 0);
+    box-shadow: 0 0 15px 0px yellow;
+}
+.key3 i{
+    height: 50px;
+    width: 5px;
+    box-shadow: 0 0 15px 0px rgb(34, 255, 0);
+    background-color: rgb(19, 255, 27);
+}
+#dclock , .swatch{
+    border: 5px solid rgb(0, 255, 0);
+    box-shadow:0px 0px 10px 0px rgb(0, 0, 0),inset 0px 0px 10px 0px rgb(0, 0, 0),inset 0px 0px 20px 0px rgb(74, 255, 42) ;
+    color: rgb(0, 255, 0);
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 50px;
+    font-family: 'Orbitron';
+    display: none;
+}
+.swatch{
+    width: 550px;
+}
+#date , #day{
+    font-size: large;
+}
+.timezone{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    font-size: 70px;
+}
+#apm_sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
+}
+#wtc{
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+#controls{
+    display: flex;
+    justify-content: space-around;
+}
+.btn-sw{
+    margin: 5%;
+    font-size: x-large;
+    border-radius: 20px;
+}
+#stop{display:none;}
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(112, 111, 111, 0.486);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(116, 115, 115);
+  }
+
+
+     /* Responsive */
+
+     @media  screen and (max-width:750px) {
+         .btn-w{
+            width: 180px;
+            height: 50px;
+            margin: 40px;
+            font-size: x-large;
+         }
+         .container{
+             min-width: fit-content;
+             margin-bottom: 20px;
+         }
+         .aclock{
+         background-size: 250px;         
+         width: 250px;
+         height: 250px;
+         }
+         .swatch{
+             width: 210px ;
+             font-size: 23px;
+         }
+         #wtc{
+             margin: 25px 0;
+         }
+         .swatch #controls{
+            display: grid;
+         }
+         .btn-sw{
+             font-size: 20px;
+             width: 180px;
+             height: 50px;
+             margin: 10px;
+         }
+
+         .timezone{
+             font-size: 45px;
+         }
+         #apm_sec,#date,#day{
+             font-size: 18px;
+         }
+         .btn{
+
+             box-shadow:inset 0 0 50px 0 rgb(0, 0, 0), 0 0 75px 0 rgb(25, 190, 190);
+         }
+         .btn:hover{
+
+             box-shadow:inset 0 0 25px 0 rgb(0, 0, 0), 0 0 75px 0 rgb(0, 149, 255);
+         }
+
+     }
+     /* Info */
+     .myname{
+        font-family: monospace;
+        color:rgb(128, 253, 253);
+        ;
+        font-size: 38px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        animation: rgb2 5s linear infinite;
+    }
+    
+    .myname::before{
+        content: " ";
+        margin-top: 45px;
+        position: absolute;
+        background-color: aqua;
+        width: 350px;
+        height: 5px;
+        border-radius: 20px;
+        animation: rgb1 5s linear infinite;
+    }
+    .social-link{
+        display: flex;
+        justify-content:center;
+    }
+    .social-link img{
+        margin-top: 6px;
+        transition: all 0.2s ;
+        width: 80px;
+    }
+    .social-link img:hover{
+        width: 90px;
+        opacity: 0.7;
+    }
+    @media (max-width:750px) {
+        .myname{
+            font-size: 35px;
+        }
+        .myname::before{
+            width: 250px;
+        }
+        .social-link img{
+            margin-top: 12px;
+            width: 55px;
+        }
+        .social-link img:hover{
+            width: 65px;
+        }
+    }
+    @media (max-width:335px) {
+        .myname{
+            display: none;
+        }
+    }
